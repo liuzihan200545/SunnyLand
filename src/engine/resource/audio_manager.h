@@ -35,7 +35,7 @@ private:
     struct MIX_MixerDeleter {
         void operator()(MIX_Mixer* mixer) const {
             if (mixer) {
-                //MIX_DestroyMixer(mixer);
+                MIX_DestroyMixer(mixer);
             }
         }
     };

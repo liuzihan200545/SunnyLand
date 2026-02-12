@@ -31,6 +31,7 @@ AudioManager::AudioManager() {
 
 AudioManager::~AudioManager() {
     // 停止所有播放
+    spdlog::debug("停止所有播放");
     if (mixer_) {
         MIX_PauseAllTracks(mixer_.get());
     }

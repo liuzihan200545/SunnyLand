@@ -74,6 +74,14 @@ void GameApp::render() {
 }
 
 void GameApp::close() {
+    if (resource_manager_) {
+        resource_manager_.reset();
+    }
+
+    if (time_) {
+        time_.reset();
+    }
+
     spdlog::trace("关闭 GameApp ...");
     if (sdl_renderer_) {
         SDL_DestroyRenderer(sdl_renderer_);
