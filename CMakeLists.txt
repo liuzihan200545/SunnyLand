@@ -16,6 +16,16 @@ find_package(spdlog REQUIRED)
 
 add_executable(SunnyLand src/main.cpp
         src/engine/core/game_app.cpp
-        src/engine/core/game_app.h)
+        src/engine/core/game_app.h
+        src/engine/core/time.cpp
+        src/engine/core/time.h
+        src/engine/resource/texture_manager.cpp
+        src/engine/resource/texture_manager.h
+        src/engine/resource/font_manager.cpp
+        src/engine/resource/font_manager.h
+        src/engine/resource/audio_manager.cpp
+        src/engine/resource/audio_manager.h
+        src/engine/resource/resource_manager.cpp
+        src/engine/resource/resource_manager.h)
 
 target_link_libraries(SunnyLand PRIVATE SDL3::SDL3 SDL3_mixer::SDL3_mixer SDL3_image::SDL3_image SDL3_ttf::SDL3_ttf glm::glm spdlog::spdlog)

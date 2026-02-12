@@ -3,7 +3,7 @@
 #include <spdlog/spdlog.h>
 
 int main() {
-    spdlog::set_level(spdlog::level::trace); // 设置日志级别为 trace，输出所有日志
+    spdlog::set_level(spdlog::level::debug); // 设置日志级别为 trace，输出所有日志
     engine::core::GameApp app;
     app.run();
     return 0;

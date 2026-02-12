@@ -4,17 +4,28 @@
 
 #ifndef SUNNYLAND_GAME_APP_H
 #define SUNNYLAND_GAME_APP_H
+#include <memory>
 
 struct SDL_Window;
 struct SDL_Renderer;
 
+namespace engine::resource {
+    class ResourceManager;
+}
+
 namespace engine::core {
+
+class Time;
 
 class GameApp final {
 private:
     SDL_Window* window_ = nullptr;
     SDL_Renderer* sdl_renderer_ = nullptr;
     bool is_running_ = false;
+
+    // 引擎组件
+    std::unique_ptr<engine::core::Time> time_;
+    std::unique_ptr<engine::resource::ResourceManager> resource_manager_;
 
 public:
     GameApp();
@@ -37,6 +48,14 @@ private:
     void update(float dt);
     void render();
     void close();
+
+    // 各模块的初始化/创建函数，在init()中调用
+    bool initSDL();
+    bool initTime();
+    bool initResourceManager();
+
+    // 测试用函数
+    void testResourceManager();
 
 };
 
